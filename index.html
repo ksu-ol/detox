@@ -61,7 +61,8 @@
 							<p class="header__info-tel"><a class="header__info-tel_link text-accent" href="tel:+79061800041">8 (906) 180-00-41</a></p>
 							<p class="header__info-text">Работаем 24/7</p>
 						</div>
-						<button class="button header__button hidden-mobile" type="button">
+						<button class="button header__button hidden-mobile" type="button"
+						onclick="callOverlay.showModal()">
 							Заказать звонок
 						</button>
 			</div>
@@ -117,7 +118,10 @@
 					
 						<div class="hero__buttons">
 						<button class="button" type="button">Получить помощь</button>
-						<button class="button button_circuit" type="button">Заказать звонок</button>
+						<button class="button button_circuit" type="button"
+						onclick="callOverlay.showModal()">
+							Заказать звонок
+						</button>
 					</div>
 				</div>
 				</div>
@@ -914,7 +918,7 @@
 		</p>
 	</div>
 
-	<dialog class="mobile-overlay visible-mobile" id="mobileOverlay">
+	<dialog class="mobile-overlay visible-laptop" id="mobileOverlay">
 		<form class="mobile-overlay__close-button-wrapper" method="dialog">
 			<div class="mobile-overlay__header">
 				<div class="header__logo">
@@ -992,11 +996,45 @@
 				<div class="mobile-overlay__footer-info">
 						<p class="mobile-overlay__footer-tel"><a class="mobile-overlay__footer-link text-accent" href="tel:+79061800041">8 (906) 180-00-41</a></p>
 						<p class="mobile-overlay__footer-text">Работаем 24/7</p>
-						<button class="button header__button" type="button">
+						<button class="button mobile-overlay__button" type="button">
 								Заказать звонок
 						</button>
 					</div>
 				</div>
+		</div>
+	</dialog>
+
+	<dialog class="call-overlay" id="callOverlay">
+		<form class="call-overlay__clode-button" method="dialog">
+			<button class="call-overlay__close-button cross-button-grey" type="submit">
+				<span class="visually-hidden">Закрытие модального окна</span>
+			</button>
+		</form>
+		<div class="call-overlay__body">
+				<div class="call-overlay-header">
+
+				<h2 class="call-overlay-title">
+					Заказать звонок
+				</h2>
+				<p class="call-overlay-text">
+					Просто оставьте заявку и мы вам перезвоним в ближайшее время
+				</p>
+				</div>
+			<form class="call-overlay__form feedback__form-wrapper">
+						
+						<label class="side-form__label">
+							<input class="side-form__text" type="text" name="name" id="name" placeholder="Ваше имя">
+						</label>
+						<label class="side-form__label">
+						<input class="side-form__text" type="tel" name="" placeholder="+7 999-999-99-99">
+					</label>
+						<button class="button call-overlay__button" type="submit">Отправить</button>
+						<p class="side-form__policy">
+							Нажимая кнопку «Отправить», вы соглашаетесь с <a class="side-form__policy-link" href="/">политикой конфиденциальности</a>
+						</p>
+					</form>
+					
+			</div>
 		</div>
 	</dialog>
 
