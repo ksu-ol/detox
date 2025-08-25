@@ -96,5 +96,38 @@
 
 // doctor slider
 
+	 const doctorsSliderCheck = document.querySelectorAll('.doctors__slider');
+            
+            if (doctorsSliderCheck.length > 0) {
+                const doctorsSlider = new Swiper('.doctors__slider', {
+                    loop: true,
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    grabCursor: true,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    breakpoints: {
+                        0: {
+                            slidesPerView: 1,
+                            spaceBetween: 15,
+                        },
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                        1280: {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        }
+                    }
+                });
+            }
 
 })()
